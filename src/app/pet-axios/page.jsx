@@ -31,30 +31,32 @@ export default function Page() {
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4">
       <div className="bg-white shadow-lg rounded-2xl p-6 w-full max-w-4xl">
-        <h1 className="text-3xl font-bold text-gray-800 text-center mb-6">
+        <h1 className="text-3xl font-bold text-gray-900 text-center mb-6">
           🐾 Pet List
         </h1>
-        <p className="text-center text-gray-600 mb-4">
+        <p className="text-center text-gray-900 text-lg font-medium mb-4">
           Success:{" "}
           <span
-            className={apiResponse.success ? "text-green-500" : "text-red-500"}
+            className={apiResponse.success ? "text-green-600 font-bold" : "text-red-600 font-bold"}
           >
             {apiResponse.success ? "Yes" : "No"}
           </span>
         </p>
-        <p className="text-center text-gray-700 mb-6">{apiResponse.message}</p>
+        <p className="text-center text-gray-900 text-lg font-medium mb-6">
+          {apiResponse.message}
+        </p>
 
         {/* ตารางข้อมูลสัตว์เลี้ยง */}
         <div className="overflow-x-auto">
           <table className="min-w-full bg-white border border-gray-300 rounded-lg shadow-md">
-            <thead className="bg-gray-800 text-white">
+            <thead className="bg-gray-800 text-white text-lg font-semibold">
               <tr>
                 <th className="py-3 px-6 text-left">ID</th>
                 <th className="py-3 px-6 text-left">Name</th>
                 <th className="py-3 px-6 text-left">Species</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody className="text-gray-900 text-lg font-medium">
               {apiResponse.data.length > 0 ? (
                 apiResponse.data.map((item, index) => (
                   <tr
@@ -72,7 +74,7 @@ export default function Page() {
                 <tr>
                   <td
                     colSpan="3"
-                    className="py-3 px-6 text-center text-gray-500 border-b"
+                    className="py-3 px-6 text-center text-gray-800 text-lg font-medium border-b"
                   >
                     No data available
                   </td>

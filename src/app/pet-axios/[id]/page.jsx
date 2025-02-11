@@ -40,14 +40,15 @@
         if (error) return <p>Error: {error}</p>;
 
         return (
-            <div>
-                <h1>API Response</h1>
-                <p>Success: {apiResponse.success ? "Yes" : "No"}</p>
-                <p>Message: {apiResponse.message}</p>
-                <h2>Data:</h2>
-                <p>
-                    {apiResponse.data.name} - {apiResponse.data.species}
-                </p>
+            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+                <div style={{ border: '1px solid #ccc', borderRadius: '10px', padding: '20px', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', maxWidth: '400px', width: '100%' }}>
+                    <h1 style={{ textAlign: 'center' }}>API Response</h1>
+                    <p><strong>Success:</strong> {apiResponse.success ? "Yes" : "No"}</p>
+                    <p><strong>Message:</strong> {apiResponse.message}</p>
+                    <h2>Data:</h2>
+                    <p><strong>Name:</strong> {apiResponse.data.name}</p>
+                    <p><strong>Species:</strong> {apiResponse.data.species}</p>
+                </div>
             </div>
         );
     }
